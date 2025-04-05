@@ -24,6 +24,7 @@ cv.drawChessboardCorners(display, board_pattern, pts, complete)
 return cv.calibrateCamera(obj_points, img_points, gray.shape[::1], K, dist_coeff, flags=calib_flags)
 ```
 ![Image](https://github.com/user-attachments/assets/9a0573a6-241e-46c4-8043-00095a1012e6)
+
 This is my smartphone camera intrinsic values.
 4. Using this values we can reduce distortion of our video for chessboard.
 By pressing tab we can toggle modes between Original version,
