@@ -13,7 +13,7 @@ def select_img_from_video(video_file, board_pattern, select_all=False, wait_msec
             break
         
         if select_all: 
-            img.select.append(img)
+            img_select.append(img)
         else:
             display = img.copy()
             cv.putText(display, f'NSelect: {len(img_select)}', (10, 25), cv.FONT_HERSHEY_DUPLEX, 0.6, (0, 255, 0))
@@ -57,7 +57,6 @@ if __name__ == '__main__':
     img_select = select_img_from_video(video_file, board_pattern)
     rms, K, dist_coeff, rvecs, tvecs = calib_camera_from_chessboard(img_select, board_pattern, board_cellsize)
     
-    print('## Camera Calibration Results')
     print(f'* The number of selected images = {len(img_select)}')
     print(f'* RMS error = {rms}')
     print(f'* Camera matrix (K) = \n{K}')
